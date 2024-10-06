@@ -31,8 +31,8 @@ const ProductDetails = () => {
 
   return (
     <div>
-      <div className="max-w-7xl card lg:card-side bg-base-100 shadow-xl mt-24">
-        <div className="flex-1">
+      <div className="max-w-7xl card lg:card-side bg-base-100 shadow-xl mt-24 ">
+        <div className="flex-1 ">
           <figure>
             <img className="" src={data?.data?.image} alt="Album" />
           </figure>

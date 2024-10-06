@@ -9,6 +9,7 @@ import Cart from "../Pages/Cart/Cart";
 import ConfirmOrder from "../Pages/ConfirmOrder/ConfirmOrder";
 import SuccessOrder from "../Pages/SuccessOrder/SuccessOrder";
 import ProductManagement from "../Pages/ProductManagement/ProductManagement";
+import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 
 
 
@@ -16,6 +17,7 @@ import ProductManagement from "../Pages/ProductManagement/ProductManagement";
     {
       path: "/",
       element: <MainLayout></MainLayout>,
+      errorElement:<ErrorPage></ErrorPage>,
       children:[
         {
             path:"/",

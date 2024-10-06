@@ -138,6 +138,9 @@ Next
             <h2 className="text-lg font-medium text-black">{item.title}</h2>
             <p className="text-base text-black">Price: {item.price}</p>
             <p className="text-base text-black">Stock: {item.quantity}</p>
+            {
+              item.quantity === 0 ? <p className="text-red-500 font-medium">Out of stock </p>:""
+            }
             <div className="card-actions justify-end">
               <Link to={`/productDetails/${item._id}`}>
                 <button className="py-1 px-4  text-white rounded-tl-md rounded-br-md bg-[#03AED2] text-lg font-medium">View Details</button>

@@ -1,6 +1,7 @@
 import Banner from "../../Components/Banner/Banner";
 import HomeProduct from "../../Components/HomeProdect/HomeProduct";
 import { useGetProductQuery } from "../../Redux/Features/product.Api";
+import Category from "../Category/Category";
 
 
 
@@ -13,6 +14,7 @@ const Home = () => {
         <div>
          <Banner></Banner>
          <HomeProduct></HomeProduct>
+         <Category></Category>
         
         </div>
     );

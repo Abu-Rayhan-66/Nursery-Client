@@ -10,15 +10,17 @@ const productApi = baseApi.injectEndpoints({
           body: data,
           
         }),
+        invalidatesTags: ["product"],
       }),
   
       getProduct: builder.query({
-        query: ({searchTerm = "", minPrice = "", maxPrice = "",page, limit }) => ({
+        query: ({searchTerm = "", minPrice = "", maxPrice = "",page, limit, sortBy, sortOrder }) => ({
           url: "/api/product",
-          params: { searchTerm, minPrice, maxPrice, page, limit },
+          params: { searchTerm, minPrice, maxPrice, page, limit, sortBy, sortOrder },
           method: "GET",
           
         }),
+        providesTags: ["product"],
       }),
 
       getSingleProduct: builder.query({
@@ -27,6 +29,7 @@ const productApi = baseApi.injectEndpoints({
           method: "GET",
           
         }),
+        providesTags: ["product"],
       }),
 
       updateProduct: builder.mutation({
@@ -35,6 +38,7 @@ const productApi = baseApi.injectEndpoints({
           method: "PATCH",
           body:  products 
         }),
+        invalidatesTags: ["product"],
       }),
     }),
   });

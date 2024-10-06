@@ -21,6 +21,7 @@ const Product = () => {
   const [minPrice, setMinPrice] = useState<number | "">("");
   const [maxPrice, setMaxPrice] = useState<number | "">("");
   const [currentPage, setCurrentPage] = useState(1); 
+  const [sortOrder, setSortOrder] = useState<"asc" | "desc">("asc");
   const itemsPerPage = 2;
   console.log(searchTerm, minPrice, maxPrice)
 
@@ -30,8 +31,15 @@ const Product = () => {
     maxPrice,
     page: currentPage,
     limit:itemsPerPage,
+    sortBy: "price",
+    sortOrder,
     isDeleted: false, 
   });
+
+  const handleSortChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setSortOrder(e.target.value as "asc" | "desc");
+    setCurrentPage(1); 
+  };
 
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(e.target.value); 
@@ -54,13 +62,28 @@ const Product = () => {
     <div className="lg:flex flex-1  mt-24">
   
   <div className="mb-6  mr-3 ">
+  <div className="flex gap-4">
     <input
       type="text"
-      placeholder="    Search by Category and Title"
+      placeholder="Search by Category and Title"
       value={searchTerm}
       onChange={handleSearchChange} 
       className="py-1 w-full mb-3 rounded-md border-[2px] focus:border-[#1b918b] focus:outline-none  border-[#03AED2]"
     />
+    <select
+     name="sortSelect"
+     value={sortOrder}
+     onChange={handleSortChange} 
+     className="py-1 w-full mb-3 rounded-md border-[2px] focus:border-[#1b918b] focus:outline-none  border-[#03AED2]"
+      id=""
+      >
+      <option value="" disabled selected >
+      Sort by price
+  </option>
+      <option value="asc">Low to high</option>
+      <option value="desc">High to low</option>
+    </select>
+    </div>
      <h2 className="mb-2 bg-[#03AED2] py-1 px-2 text-white rounded-md">Filter by price range</h2>
     <div className="flex space-x-4 mb-4">
      

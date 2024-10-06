@@ -112,7 +112,7 @@ const ConfirmOrder = () => {
           </div>
           <button
             type="submit"
-            className={`mt-4 p-3 bg-gray-600 text-white w-full rounded-lg hover:bg-gray-700 ${
+            className={`mt-4 p-3 w-full new-btn ${
               isLoading ? "opacity-50 cursor-not-allowed" : ""
             }`}
             disabled={isLoading}

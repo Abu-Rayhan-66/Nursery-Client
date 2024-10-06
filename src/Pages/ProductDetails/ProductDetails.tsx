@@ -4,6 +4,7 @@ import ReactStars from "react-stars";
 import { useState } from "react";
 import { useAppDispatch } from "../../Redux/hooks";
 import { addToCart } from "../../Redux/Features/cart/cartSlice";
+// import  './index.css';
 
 const ProductDetails = () => {
   const { id } = useParams();
@@ -46,13 +47,13 @@ const ProductDetails = () => {
             value={data?.data?.rating}
             edit={false} 
             size={24}
-            color2={'#1c9991'}
+            color2={'#03AED2'}
           />
           <p>{data?.data?.description}</p>
           <div className="card-actions">
             <button 
               onClick={handleAddToCart} 
-              className="btn btn-primary" 
+              className="new-btn" 
               disabled={data?.data?.quantity === 0} // Disable if quantity is 0
             >
               {addedToCart ? "Added to cart" : "Add To Cart"}

@@ -25,20 +25,6 @@ const Navbar = () => {
       </h2>
       <h2 className="text-white font-medium uppercase text-lg m-3">
         <NavLink
-          to="/about"
-          className={({ isActive, isPending }) =>
-            isPending
-              ? "pending"
-              : isActive
-              ? "text-[#03AED2] border-2 border-[#03AED2] rounded-tl-xl rounded-br-xl p-1"
-              : ""
-          }
-        >
-          about
-        </NavLink>
-      </h2>
-      <h2 className="text-white font-medium uppercase text-lg m-3">
-        <NavLink
           to="/product"
           className={({ isActive, isPending }) =>
             isPending
@@ -49,6 +35,20 @@ const Navbar = () => {
           }
         >
           Product
+        </NavLink>
+      </h2>
+      <h2 className="text-white font-medium uppercase text-lg m-3">
+        <NavLink
+          to="/productManagement"
+          className={({ isActive, isPending }) =>
+            isPending
+              ? "pending"
+              : isActive
+              ? "text-[#03AED2] border-2 border-[#03AED2] rounded-tl-xl rounded-br-xl p-1"
+              : ""
+          }
+        >
+          Dashboard
         </NavLink>
       </h2>
     </>

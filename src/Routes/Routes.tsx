@@ -8,6 +8,7 @@ import ProductDetails from "../Pages/ProductDetails/ProductDetails";
 import Cart from "../Pages/Cart/Cart";
 import ConfirmOrder from "../Pages/ConfirmOrder/ConfirmOrder";
 import SuccessOrder from "../Pages/SuccessOrder/SuccessOrder";
+import ProductManagement from "../Pages/ProductManagement/ProductManagement";
 
 
 
@@ -39,6 +40,10 @@ import SuccessOrder from "../Pages/SuccessOrder/SuccessOrder";
         {
             path:"/successOrder",
             element:<SuccessOrder></SuccessOrder>
+        },
+        {
+            path:"/productManagement",
+            element:<ProductManagement></ProductManagement>
         }
       ]
 

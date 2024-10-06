@@ -8,13 +8,13 @@ const Cart = () => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
   const SHIPPING_CHARGE = 3;
-
   const subtotal = (): number => {
     return cartData.reduce(
       (sum: number, item: CartItem) => sum + item.price * item.quantity,
       0
     );
   };
+
 
   const tax = (): number => {
     return subtotal() * 0.1; 
@@ -94,7 +94,7 @@ const Cart = () => {
 
                     <div className="mt-4">
                       <button
-                        className="btn btn-sm bg-red-500 text-white"
+                        className="remove-btn "
                         onClick={() => handleRemove(item.productId)}
                       >
                         Remove
@@ -134,7 +134,7 @@ const Cart = () => {
             </div>
 
             <button
-              className="w-full bg-blue-500 text-white p-3 mt-6 rounded-lg hover:bg-blue-600"
+              className="w-full mt-4 new-btn"
               onClick={handlePlaceOrder}
               disabled={cartData.length === 0}
             >
@@ -142,7 +142,7 @@ const Cart = () => {
             </button>
             {cartData.length > 0 && (
               <button
-                className="w-full bg-red-500 text-white p-3 mt-3 rounded-lg hover:bg-red-600"
+                className="w-full remove-btn mt-4"
                 onClick={handleClearCart}
               >
                 Clear Cart

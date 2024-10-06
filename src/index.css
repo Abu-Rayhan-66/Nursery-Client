@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    
+ .new-btn {
+        @apply py-1 px-4  text-white rounded-tl-md rounded-br-md bg-[#03AED2] text-lg font-medium 
+    }
+ .remove-btn {
+        @apply py-1 px-4  text-white rounded-tl-md rounded-br-md bg-rose-500 text-lg font-medium 
+    }
+}

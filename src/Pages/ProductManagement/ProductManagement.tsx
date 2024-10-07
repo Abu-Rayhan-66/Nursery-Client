@@ -7,6 +7,7 @@ import {
 } from "../../Redux/Features/product.Api";
 import { toast } from "sonner";
 import Swal from "sweetalert2";
+import { FaPlus } from "react-icons/fa";
 
 export type TProduct = {
   _id: string;
@@ -23,7 +24,7 @@ export type TProduct = {
 const ProductManagement = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [currentPage, setCurrentPage] = useState(1); 
-  const itemsPerPage = 2;
+  const itemsPerPage = 7;
 
   const [isUpdateModalOpen, setIsUpdateModalOpen] = useState(false);
   const [updateProductData, setUpdateProductData] = useState<TProduct | null>(null);
@@ -196,7 +197,7 @@ const ProductManagement = () => {
               <th>Delete</th>
               <th>
                 <button onClick={handleOpenAddModal} className="new-btn">
-                  Add Product
+                <FaPlus className="inline mb-1"></FaPlus> Add Product 
                 </button>
               </th>
             </tr>
@@ -215,7 +216,7 @@ const ProductManagement = () => {
                   </div>
                 </td>
                 <td>{item.title}</td>
-                <td>{item.price}</td>
+                <td>${item.price}</td>
                 <td>{item.category}</td>
                 <th>
                   <button onClick={() => handleOpenUpdateModal(item)} className="new-btn">
@@ -527,7 +528,7 @@ Previous
 <span className="py-1 px-2">Page {currentPage}</span>
 <button
 onClick={() => handlePageChange(currentPage + 1)}
-disabled={data && data.data.length < 2} 
+disabled={data && data.data.length < 7} 
 className="py-1 px-4 bg-[#03AED2] text-white rounded-md ml-2 disabled:opacity-50"
 >
 Next

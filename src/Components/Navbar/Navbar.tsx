@@ -88,7 +88,7 @@ const Navbar = () => {
             <Link to="/">
               <img
                 className="rounded-full size-12"
-                src="https://i.ibb.co.com/JcVyrjg/Screenshot-3.png"
+                src="https://i.ibb.co.com/2nzhQLM/Screenshot-10.png"
                 alt=""
               />
             </Link>

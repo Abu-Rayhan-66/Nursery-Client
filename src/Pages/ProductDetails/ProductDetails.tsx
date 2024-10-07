@@ -29,12 +29,20 @@ const ProductDetails = () => {
     setAddedToCart(true);
   };
 
+  window.addEventListener('beforeunload', function (e) {
+    const confirmationMessage = "Your progress will be lost if you leave this page.";
+    
+    e.returnValue = confirmationMessage; 
+    return confirmationMessage;          
+});
+
+
   return (
-    <div>
+    <div className="min-h-[69vh]">
       <div className="max-w-7xl card lg:card-side bg-base-100 shadow-xl mt-24 ">
         <div className="flex-1 ">
           <figure>
-            <img className="" src={data?.data?.image} alt="Album" />
+            <img className="h-full" src={data?.data?.image} alt="Album" />
           </figure>
         </div>
         <div className="card-body flex-1">

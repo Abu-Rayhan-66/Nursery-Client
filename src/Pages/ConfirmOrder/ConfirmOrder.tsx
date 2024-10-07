@@ -67,8 +67,16 @@ const ConfirmOrder = () => {
     }
   };
 
+  window.addEventListener('beforeunload', function (e) {
+    const confirmationMessage = "Your progress will be lost if you leave this page.";
+    
+    e.returnValue = confirmationMessage; 
+    return confirmationMessage;          
+});
+
+
   return (
-    <div className="mt-24 flex flex-col lg:flex-row justify-between px-4 max-w-6xl mx-auto">
+    <div className=" min-h-[69vh] mt-24 flex flex-col lg:flex-row justify-between px-4 max-w-6xl mx-auto">
       <div className="w-full lg:w-1/2 pr-4 flex flex-col">
         <h2 className="text-lg text-center">Shipping Details</h2>
         <form className="mt-4 flex-grow" onSubmit={handleSubmit}>
@@ -112,7 +120,7 @@ const ConfirmOrder = () => {
           </div>
           <button
             type="submit"
-            className={`mt-4 p-3 w-full new-btn ${
+            className={`mt-4 px-3 w-full new-btn ${
               isLoading ? "opacity-50 cursor-not-allowed" : ""
             }`}
             disabled={isLoading}

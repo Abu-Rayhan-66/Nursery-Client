@@ -42,8 +42,15 @@ const Cart = () => {
     navigate('/confirmOrder');
   };
 
+  window.addEventListener('beforeunload', function (e) {
+    const confirmationMessage = "Your progress will be lost if you leave this page.";
+    
+    e.returnValue = confirmationMessage; 
+    return confirmationMessage;          
+});
+
   return (
-    <div className="mt-24 max-w-6xl mx-auto px-4">
+    <div className="mt-24 max-w-6xl mx-auto px-4 min-h-[69vh]">
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
  
         <div className="lg:col-span-2">

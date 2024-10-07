@@ -6,24 +6,25 @@ const Banner = () => {
   return (
     <div className="w-full">
       <Carousel showArrows={true} >
+        
         <div>
           <img
-            src="https://i.ibb.co.com/CVMGRPk/archery-range.jpg"
-            alt="Archery Range"
-            className="w-full  object-cover"
-          />
-        </div>
-        <div>
-          <img
-            src="https://i.ibb.co.com/JRDtbvs/Screenshot-4.png"
+            src="https://i.ibb.co.com/gmxrH0h/popular-potted-houseplants-white-background-53876-127000-rawpixel.jpg"
             alt="Team Sports"
+            className=" w-full  object-cover"
+          />
+        </div>
+        <div>
+          <img
+            src="https://i.ibb.co.com/8D5vZfs/air-purifying-plants-0-1200.jpg"
+            alt="Football Pitch"
             className="w-full  object-cover"
           />
         </div>
         <div>
           <img
-            src="https://i.ibb.co.com/GtkvGqv/why-do-they-sprinkle-football-pitches.jpg"
-            alt="Football Pitch"
+            src="https://i.ibb.co.com/5Lq3PG9/unnamed.jpg"
+            alt="Archery Range"
             className="w-full  object-cover"
           />
         </div>

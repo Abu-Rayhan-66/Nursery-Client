@@ -1,30 +1,28 @@
-# React + TypeScript + Vite
+# This is how you run this client site locally.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Step: 1 
+Download the repo by following command :
+```json
+ git clone https://github.com/Abu-Rayhan-66/Nursery-Client
+ ```
 
-Currently, two official plugins are available:
+## Step: 2
+Download and install node js in your machine and add typescript globally in your machine.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Step 3
+Add .env file in your root directory and add all required environment variable in this file.
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+## Step 4
+```json
+npm install
 ```
+Run this command to download all the dependency and Dev-dependency
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Step 5
+```json 
+npm run dev
+``` 
+Run this command to start your server locally.
+
+##
+If you follow these steps you can run the server locally.  

@@ -22,7 +22,7 @@ const Product = () => {
   const [maxPrice, setMaxPrice] = useState<number | "">("");
   const [currentPage, setCurrentPage] = useState(1); 
   const [sortOrder, setSortOrder] = useState<"asc" | "desc">("asc");
-  const itemsPerPage = 2;
+  const itemsPerPage = 6;
   console.log(searchTerm, minPrice, maxPrice)
 
   const { data, isLoading, error } = useGetProductQuery({
@@ -113,7 +113,7 @@ Previous
 <span className="py-1 px-2">Page {currentPage}</span>
 <button
 onClick={() => handlePageChange(currentPage + 1)}
-disabled={data && data.data.length < 2} 
+disabled={data && data.data.length < 6} 
 className="py-1 px-4 bg-[#03AED2] text-white rounded-md ml-2 disabled:opacity-50"
 >
 Next
@@ -128,7 +128,7 @@ Next
   ) : !data || data.data.length === 0 ? (
     <div>No facilities found</div>
   ) : (
-    <div className="flex-[5] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4 mx-auto ">
+    <div className="mb-4 flex-[5] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4 mx-auto ">
       {data?.data?.map((item:TProduct) => (
         <div key={item._id} className="card card-compact bg-white  rounded-md border-[#03AED2] border-[1px] shadow-sm hover:shadow-[#03AED2]">
           <figure>
@@ -136,7 +136,7 @@ Next
           </figure>
           <div className="card-body">
             <h2 className="text-lg font-medium text-black">{item.title}</h2>
-            <p className="text-base text-black">Price: {item.price}</p>
+            <p className="text-base text-black">Price: ${item.price}</p>
             <p className="text-base text-black">Stock: {item.quantity}</p>
             {
               item.quantity === 0 ? <p className="text-red-500 font-medium">Out of stock </p>:""

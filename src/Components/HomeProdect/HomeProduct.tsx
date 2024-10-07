@@ -23,7 +23,7 @@ const HomeProduct = () => {
   const [currentPage, setCurrentPage] = useState(1); 
   const [sortOrder, setSortOrder] = useState<"asc" | "desc">("asc");
   const itemsPerPage = 6;
-  console.log("sort from frontreed", sortOrder)
+
 
   const { data, isLoading, error } = useGetProductQuery({
     searchTerm,
@@ -63,7 +63,7 @@ const HomeProduct = () => {
   return (
     <div className="min-h-[70vh] bg-gray-100 text-center">
     <div className=" flex-1  mt-24">
-     <h2 className="mt-10 mb-10">Products</h2>
+     <h2 className="text-3xl font-semibold text-center mb-6  uppercase mt-10">Products</h2>
   <div className="mb-6 max-w-2xl mx-auto ">
     <div className="flex gap-4">
     <input
@@ -123,7 +123,7 @@ const HomeProduct = () => {
           </figure>
           <div className="card-body">
             <h2 className="text-lg font-medium text-black">{item.title}</h2>
-            <p className="text-base text-black">Price: {item.price}</p>
+            <p className="text-base text-black">Price: ${item.price}</p>
             <p className="text-base text-black">Stock: {item.quantity}</p>
             {
               item.quantity === 0 ? <p className="text-red-500 font-medium">Out of stock </p>:""

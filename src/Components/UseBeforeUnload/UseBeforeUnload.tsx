@@ -5,8 +5,8 @@ const useBeforeUnload = (shouldWarn: boolean): void => {
     const handleBeforeUnload = (event: BeforeUnloadEvent) => {
       if (shouldWarn) {
         const warningMessage = "You have unsaved changes. Are you sure you want to leave?";
-        event.returnValue = warningMessage; // Standard for most browsers
-        return warningMessage; // For older browsers
+        event.returnValue = warningMessage; 
+        return warningMessage; 
       }
     };
 

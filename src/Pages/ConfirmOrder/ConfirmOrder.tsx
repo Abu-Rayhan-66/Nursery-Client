@@ -33,7 +33,7 @@ const ConfirmOrder = () => {
       (sum, item) => sum + item.price * item.quantity,
       0
     );
-    const tax = subtotal * 0.1; // 10% tax
+    const tax = subtotal * 0.1; 
     const SHIPPING_CHARGE = 3;
     return subtotal + tax + SHIPPING_CHARGE;
   };
